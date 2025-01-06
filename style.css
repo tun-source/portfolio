@@ -586,5 +586,43 @@ footer h3{
   }
 }
 
+@media (max-width: 768px) {
+  /* Ajuste la taille du conteneur Mac */
+  .mac-frame {
+    width: 90%; /* Ajuste la largeur pour les téléphones */
+    max-width: 100%; /* Assure que cela ne dépasse pas l'écran */
+    aspect-ratio: 351 / 205; /* Conserve les proportions */
+  }
+
+  .screen-frame {
+    top: 8%; /* Ajuste la position pour les téléphones */
+    left: 10%; /* Réduit les marges */
+    width: 80%; /* Largeur adaptée */
+    height: 50%; /* Hauteur adaptée */
+  }
+
+  .screen-frame iframe {
+    transform: scale(0.2); /* Ajuste l'échelle pour s'adapter au nouveau conteneur */
+  }
+
+  .project-card {
+    flex-direction: column; /* Dispose les projets verticalement */
+    align-items: center;
+    padding: 20px;
+  }
+
+  .project-text {
+    width: 100%; /* Prend toute la largeur */
+    text-align: center; /* Centre le texte */
+    margin-bottom: 20px; /* Espacement avec l'image */
+  }
+
+  .project-image {
+    width: 100%; /* Prend toute la largeur */
+    display: flex;
+    justify-content: center;
+  }
+}
+
 
 
