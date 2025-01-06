@@ -1,0 +1,552 @@
+/* Préloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a; /* Couleur de fond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Styles par défaut (desktop-first) */
+
+/* Styles spécifiques pour les écrans de téléphone */
+@media only screen and (max-width: 768px) {
+  body {
+      font-size: 16px; /* Taille de police adaptée */
+      line-height: 1.5;
+      padding: 10px;
+  }
+
+  header {
+      flex-direction: column; /* Changer la disposition des éléments */
+      text-align: center;
+  }
+
+  nav {
+      display: block; /* Afficher la navigation en liste verticale */
+  }
+
+  img {
+      max-width: 100%; /* Les images s'adaptent à la largeur de l'écran */
+      height: auto;
+  }
+
+  .container {
+      width: 100%; /* Conteneur qui occupe toute la largeur */
+      padding: 0 15px;
+  }
+
+  .button {
+      font-size: 14px; /* Réduction de la taille des boutons */
+      padding: 10px 20px;
+  }
+}
+
+
+/* Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.hero {
+  height: 100vh;
+  background: url('fond1.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, background-blend-mode 0.2s ease; /* Transition ralentie à 2s */
+}
+
+.hero.scrolled {
+  background-image: url(fond1.png);
+  background-blend-mode: lighten;
+}
+
+
+
+@keyframes fadeBackground {
+  to {
+      background-color: #f4f4f4;
+      background-blend-mode: lighten;
+  }
+}
+
+
+@keyframes colorTransition {
+  0% {
+    background-image: url(fond1.png);
+    color: white;
+  }
+  50% {
+    background-image: url(fond1.png);
+    opacity: 0.5;
+    color: black;
+  }
+  100% {
+    background-image: url(fond1.png);
+    opacity: 0.2;
+    color: black;
+  }
+}
+
+.animated-section {
+  animation: none;
+  transition: all 1s ease-in-out;
+}
+
+.animated-section.active {
+  animation: colorTransition 3s ease-in-out infinite;
+}
+
+
+
+
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.contact-section {
+  background-image: url(fond1.png);
+
+}
+
+.contact-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid white;
+  background-image: url(fond1.png);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-btn:hover {
+  background-image: url(fond1.png);
+  color: black;
+}
+
+.about-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: black; /* couleur de fond légère */
+}
+
+.about-content {
+  max-width: 50%;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: white;
+}
+
+.about-image img {
+  max-width: 50%;
+  height: auto;
+  background-color: transparent;
+  background: none;
+  box-shadow: none;
+  display: block;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+#anemone {
+  opacity: 1; /* Par défaut invisible */
+  transition: opacity 0.2s ease-in-out; /* Transition fluide */
+}
+
+.fade-in {
+  opacity: 1; /* Visible */
+}
+
+.fade-out {
+  opacity: 0; /* Invisible */
+}
+
+
+#services {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: black; /* Fond adapté */
+  color: white;
+  min-height: 100vh; /* Occuper toute la hauteur de l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: none;
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white; /* Couleur harmonisée */
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.service-item {
+  background: rgb(30, 28, 28);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.service-item h3 {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.service-item p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.service-item .service-details li {
+  margin-left: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.service-item .price {
+  font-size: 1.4rem;
+  
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Section avec image de fond */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  position: relative; /* Nécessaire pour positionner le pseudo-élément */
+  background-color: #f4f4f4;
+  background-size: cover; /* Assurez-vous que l'image couvre toute la section */
+  background-position: center; /* Centrer l'image de fond */
+  background-repeat: no-repeat; /* Pas de répétition de l'image */
+  overflow: hidden; /* Empêche les éléments du pseudo-élément de dépasser */
+}
+
+
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.projects, .services {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: black;
+}
+
+.projects .card, .services .card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+
+.projects .card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative; /* Pour gérer la superposition d'images et de texte */
+}
+
+
+
+.projects .card:hover .project-image {
+  opacity: 0.8; /* Effet visuel lors du survol */
+}
+
+.projects .card:hover {
+  transform: scale(1.05);
+}
+
+.projects .card:hover, .services .card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: black(0, 0, 0, 0.8);
+  background-color: black;
+
+}
+
+footer h3{
+  color: white;
+}
+
+
+/* Cadre du Mac */
+.mac-frame {
+  position: relative;
+  width: 60%; /* Largeur de l'image Mac (modifiable) */
+  max-width: 800px; /* Limite de largeur */
+  aspect-ratio: 351 / 205; 
+  /* Garde les proportions de l'image */
+  border-color: #f4f4f4;
+}
+
+/* Image du Mac */
+.mac-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* L'écran (vitrine) */
+.screen-frame {
+  position: absolute;
+  top: 7%; /* Position verticale en pourcentage */
+  left: 20%; /* Position horizontale en pourcentage */
+  width: 58.5%; /* Largeur proportionnelle à l'image */
+  height: 60%; /* Hauteur proportionnelle à l'image */
+  overflow: hidden; /* Empêche les débordements visibles */
+  border: none;
+  background: black; /* Fond de l'écran (optionnel) */
+}
+
+/* Contenu de la vitrine */
+.screen-frame iframe {
+  width: 400%; /* Largeur pour un dézoom important */
+  height: 400%; /* Hauteur pour un dézoom important */
+  transform: scale(0.25); /* Réduction à 25% */
+  transform-origin: top left; /* Ancre le zoom sur le coin haut-gauche */
+  border: none; /* Pas de bordure */
+  overflow: scroll; /* Permet le défilement tout en cachant les barres */
+  scrollbar-width: none; /* Cache les barres de défilement sous Firefox */
+}
+
+/* Masque les barres de défilement pour Webkit (Chrome, Edge, Safari) */
+.screen-frame iframe::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Section des projets */
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chaque carte prendra toute la hauteur de l'écran */
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Carte prenant toute la hauteur de l'écran */
+  width: 100%;
+  position: relative;
+  background-color: #f4f4f4; /* Fond clair pour les cartes */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Texte du projet */
+.project-text {
+  width: 40%;
+  color:black;
+  padding: 20px;
+}
+
+.project-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: underline;
+  
+}
+
+.project-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Image du laptop */
+.project-image {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-color: black;
+}
+
+/* Cadre du Mac */
+.mac-frame {
+  position: relative;
+  width: 60%; /* Largeur de l'image Mac (modifiable) */
+  max-width: 800px; /* Limite de largeur */
+  aspect-ratio: 351 / 205; /* Garde les proportions de l'image */
+}
+
+.mac-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* L'écran (vitrine) */
+.screen-frame {
+  position: absolute;
+  top: 7%; /* Position verticale en pourcentage */
+  left: 20%; /* Position horizontale en pourcentage */
+  width: 58.5%; /* Largeur proportionnelle à l'image */
+  height: 60%; /* Hauteur proportionnelle à l'image */
+  overflow: hidden; /* Empêche les débordements visibles */
+  border: none;
+  background: black; /* Fond de l'écran (optionnel) */
+}
+
+/* Contenu de la vitrine */
+.screen-frame iframe {
+  width: 400%; /* Largeur pour un dézoom important */
+  height: 400%; /* Hauteur pour un dézoom important */
+  transform: scale(0.25); /* Réduction à 25% */
+  transform-origin: top left; /* Ancre le zoom sur le coin haut-gauche */
+  border: none; /* Pas de bordure */
+  overflow: scroll; /* Permet le défilement tout en cachant les barres */
+  scrollbar-width: none; /* Cache les barres de défilement sous Firefox */
+}
+
+/* Masque les barres de défilement pour Webkit (Chrome, Edge, Safari) */
+.screen-frame iframe::-webkit-scrollbar {
+  display: none;
+}
+
+.view-site-btn {
+  display: inline-block;
+  padding: 8px 20px; /* Bouton plus petit */
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent avec un léger fond */
+  color: white;
+  font-size: 1rem; /* Taille du texte plus petite */
+  font-weight: normal;
+  text-decoration: none;
+  border: 2px solid white; /* Bordure blanche */
+  border-radius: 20px; /* Bord arrondi */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px; /* Espacement entre le texte et le bouton */
+}
+
+.view-site-btn:hover {
+  background-color: white; /* Fond blanc lors du survol */
+  color: black; /* Texte noir lors du survol */
+  opacity: 1; /* Augmenter l'opacité lors du survol */
+  transform: translateY(-2px); /* Effet de déplacement lors du survol */
+}
+
+.view-site-btn:active {
+  transform: translateY(0px); /* Retour à la position normale lors du clic */
+}
+
+
+
