@@ -28,7 +28,13 @@
     align-items: center;
     text-align: center;
   }
+.screen-frame iframe {
+  width: 100%;
+  height: auto;
+  transform: none; /* Pas de zoom excessif */
+}
 
+  
   header nav a {
     margin: 10px 0;
     font-size: 1rem;
