@@ -64,6 +64,7 @@
     margin-bottom: 20px;
   }
 
+
   .mac-frame {
     width: 100%; /* Les cadres prennent toute la largeur de l'écran */
     aspect-ratio: auto; /* Garde les proportions naturelles */
@@ -84,6 +85,12 @@
     font-size: 1rem;
   }
 
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+  
   /* Services Section */
   .service-grid {
     grid-template-columns: 1fr; /* Une seule colonne */
