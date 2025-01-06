@@ -12,6 +12,97 @@
   z-index: 9999;
 }
 
+/* Styles spécifiques pour les écrans mobiles */
+@media only screen and (max-width: 768px) {
+  /* Body */
+  body {
+    font-size: 16px;
+    padding: 10px;
+    overflow-x: hidden; /* Empêche les débordements horizontaux */
+  }
+
+  /* Navigation */
+  header nav {
+    display: flex;
+    flex-direction: column; /* Navigation verticale */
+    align-items: center;
+    text-align: center;
+  }
+
+  header nav a {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  /* Section Hero */
+  .hero {
+    height: auto; /* Permet à la section de s'adapter à la hauteur du contenu */
+    padding: 20px;
+    text-align: center;
+    background-size: cover; /* Garde une bonne proportion de l'image */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  /* Projects Section */
+  .projects .project-card {
+    flex-direction: column; /* Les cartes deviennent verticales */
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .mac-frame {
+    width: 100%; /* Les cadres prennent toute la largeur de l'écran */
+    aspect-ratio: auto; /* Garde les proportions naturelles */
+  }
+
+  /* About Me Section */
+  .about-me {
+    flex-direction: column; /* Les éléments se superposent */
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  /* Services Section */
+  .service-grid {
+    grid-template-columns: 1fr; /* Une seule colonne */
+  }
+
+  /* Contact Section */
+  #contact {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact-btn {
+    width: 100%; /* Bouton s'adaptant à la largeur */
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+
 /* Styles par défaut (desktop-first) */
 
 /* Styles spécifiques pour les écrans de téléphone */
