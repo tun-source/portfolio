@@ -586,43 +586,51 @@ footer h3{
   }
 }
 
-@media (max-width: 768px) {
-  /* Ajuste la taille du conteneur Mac */
-  .mac-frame {
-    width: 90%; /* Ajuste la largeur pour les téléphones */
-    max-width: 100%; /* Assure que cela ne dépasse pas l'écran */
-    aspect-ratio: 351 / 205; /* Conserve les proportions */
-  }
+/* Styles pour les appareils avec une largeur maximale de 768px (téléphones et tablettes) */
+@media screen and (max-width: 768px) {
+    /* Ajustement du conteneur MacBook */
+    .mac-frame {
+        width: 90%; /* Réduit la largeur globale */
+        max-width: 100%; /* Assure qu'il ne dépasse pas la taille de l'écran */
+        aspect-ratio: 351 / 205; /* Maintient les proportions */
+    }
 
-  .screen-frame {
-    top: 8%; /* Ajuste la position pour les téléphones */
-    left: 10%; /* Réduit les marges */
-    width: 80%; /* Largeur adaptée */
-    height: 50%; /* Hauteur adaptée */
-  }
+    .mac-frame img {
+        width: 100%; /* L'image du MacBook s'ajuste automatiquement */
+        height: auto; /* Garde les proportions */
+    }
 
-  .screen-frame iframe {
-    transform: scale(0.2); /* Ajuste l'échelle pour s'adapter au nouveau conteneur */
-  }
+    /* Ajustement de la vitrine (iframe) */
+    .screen-frame {
+        top: 7%; /* Ajuste la position */
+        left: 10%; /* Centrer légèrement */
+        width: 80%; /* Ajuste la largeur proportionnelle */
+        height: 55%; /* Ajuste la hauteur proportionnelle */
+    }
 
-  .project-card {
-    flex-direction: column; /* Dispose les projets verticalement */
-    align-items: center;
-    padding: 20px;
-  }
+    .screen-frame iframe {
+        width: 200%; /* Réduit la taille interne pour un affichage correct */
+        height: 200%; /* Idem pour la hauteur */
+        transform: scale(0.5); /* Ajuste le zoom pour mieux correspondre */
+        transform-origin: top left; /* Point d'ancrage au coin supérieur gauche */
+    }
 
-  .project-text {
-    width: 100%; /* Prend toute la largeur */
-    text-align: center; /* Centre le texte */
-    margin-bottom: 20px; /* Espacement avec l'image */
-  }
+    /* Texte et autres éléments autour */
+    .project-text {
+        width: 100%; /* Texte occupe toute la largeur disponible */
+        padding: 10px;
+    }
 
-  .project-image {
-    width: 100%; /* Prend toute la largeur */
-    display: flex;
-    justify-content: center;
-  }
+    .project-card {
+        flex-direction: column; /* Met le texte et l'image en colonne */
+        height: auto; /* Permet un ajustement dynamique de la hauteur */
+        padding: 20px; /* Espacement supplémentaire */
+    }
+
+    .project-image {
+        width: 100%; /* L'image occupe toute la largeur disponible */
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 }
-
-
-
